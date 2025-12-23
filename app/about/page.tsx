@@ -1,7 +1,7 @@
-import AboutContent from '@/components/AboutContent'
-import WhyChooseUs from '@/components/WhyChooseUs'
+// app/about/page.tsx
+import type { Metadata } from 'next'
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'About Us - Delhi Tyre Shoppe | Quality Tyres & Expert Service',
   description: 'Learn about Delhi Tyre Shoppe - your trusted tyre retailer in Delhi. We deliver quality tyres and reliable service with experienced technicians and genuine branded products.',
 }
@@ -16,8 +16,7 @@ export default function AboutPage() {
           </h1>
         </div>
       </div>
-      <AboutContent />
-      <WhyChooseUs />
+    
     </div>
   )
 }

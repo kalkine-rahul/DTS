@@ -3,6 +3,14 @@
 import { useSession } from 'next-auth/react'
 import DashboardLayout from './DashboardLayout'
 import { FiPackage, FiShoppingCart, FiFileText, FiAlertCircle, FiTrendingUp } from 'react-icons/fi'
+import { UserRole } from '../../types/user,'
+
+
+export interface DashboardLayoutProps {
+  children: React.ReactNode;
+  userName: string;
+  userRole: UserRole; // <-- Add this line
+}
 
 export default function AdminDashboard() {
   const { data: session } = useSession()
@@ -13,9 +21,12 @@ export default function AdminDashboard() {
     { label: 'Pending Orders', value: '45', icon: FiShoppingCart, color: 'bg-yellow-500' },
     { label: 'Total Revenue', value: '₹12.5L', icon: FiTrendingUp, color: 'bg-green-500' },
   ]
+  
 
   return (
-    <DashboardLayout role="ADMIN" userName={session?.user?.name || 'Admin'}>
+   <DashboardLayout  userName="Admin"
+  userRole={session?.user?.role ?? UserRole.ADMIN}
+>
       <div className="p-8">
         <div className="mb-8">
           <h1 className="text-3xl font-bold text-white font-display mb-2">

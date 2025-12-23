@@ -2,10 +2,6 @@
 const nextConfig = {
   reactStrictMode: true,
 
-  experimental: {
-    appDir: true, // 👈 REQUIRED for src/app on Vercel
-  },
-
   images: {
     domains: ['images.unsplash.com', 'via.placeholder.com'],
   },
